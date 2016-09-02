@@ -257,10 +257,12 @@ class Config(object):
                            "security warnings.",
                            True, value_is_bool=False)
         self.add_parameter("LogFilePath",
-                           "Path to log file", "/var/log/calico/felix.log")
+                           "Path to log file", "/var/log/calico/felix.log",
+                           sources=[ENV, FILE])
         self.add_parameter("EtcdDriverLogFilePath",
                            "Path to log file for etcd driver",
-                           "/var/log/calico/felix-etcd.log")
+                           "/var/log/calico/felix-etcd.log",
+                           sources=[ENV, FILE])
         self.add_parameter("LogSeverityFile",
                            "Log severity for logging to file", "INFO")
         self.add_parameter("LogSeveritySys",
